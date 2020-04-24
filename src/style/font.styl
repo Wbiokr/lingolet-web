@@ -1,0 +1,88 @@
+// 其他没有的范围可自行添加，如.f-s-50
+
+
+// 设置font-family: 形式 --- .f-f-simSun .f-f-simHei
+$family = simSun,
+          simHei,
+          MiscroSoft
+
+for family in $family 
+  .f-f-{family}
+    font-family family
+
+// 设置font-bold: 形式 --- .f-w-600 .f-w-400
+$bold = 400,
+        500,
+        600,
+        700,
+        800
+
+for bold in $bold
+  .f-w-{bold}
+    font-weight bold
+
+// 设置font-size: 形式 --- .f-s-12 .f-s-14 .f-s-20
+$size = 12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        48,
+        60
+
+for size in $size
+  .f-s-{size} 
+    font-size (size)px
+
+// 字色相关
+.c-000
+  color #000
+.c-333
+  color #333!important
+.c-666
+  color #666666!important
+.c-999
+  color #999
+.c-aaa
+  color #aaa
+.c-ccc
+  color #ccc
+.c-eee
+  color #eee
+.c-fff
+  color #fff
+.c-818794
+  color #818794
+.c-FEA95E
+  color #FEA95E
+.c-3298FF
+  color #3298FF
+.c-818794
+  color #818794
+.c-transparent
+  color transparent!important
+
+.c-fff-80
+  color rgba(#fff,.8)
+.c-fff-70
+  color rgba(#fff,.7)
+.c-fff-50
+  color rgba(#fff,.5)
+
+.c-FF9500,.c-yellow,.c-warning
+  color: #FEA95E
+.c-7ED321,.c-success
+  color #7ED321
+.c-FB7171,.c-error,.c-red
+  color #FB7171
+

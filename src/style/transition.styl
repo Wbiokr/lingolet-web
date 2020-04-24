@@ -1,0 +1,64 @@
+// 淡入淡出
+.opacity-enter-active,.opacity-leave-active
+  @extends .ease-400
+.opacity-enter,.opacity-leave-to
+  opacity 0!important
+  transition all ease .4s
+
+// 淡入淡出
+.down-enter-active,.down-leave-active
+  @extends .ease-400
+.down-enter-active
+  transition-delay .4s
+.down-leave-to
+  opacity 0!important
+  transform: translateY(-30px)
+  // transition all ease .4s
+.down-enter
+  opacity 0!important
+  transform: translateY(30px)
+
+
+// // 淡入淡出
+// .down-enter-active,.down-leave-active
+//   @extends .ease-400
+// .down-enter-active
+//   transition-delay .4s
+// .down-leave-to
+//   opacity 0!important
+//   transform: translateY(-30px)
+//   // transition all ease .4s
+// .down-enter
+//   opacity 0!important
+//   transform: translateY(30px)
+
+// 放大/缩小
+.scale-enter-active,.scale-leave-active
+  @extends .ease-300
+.scale-enter,.scale-leave-to
+  opacity 0
+  transform scale(0)
+
+// 下拉
+.drop-enter-active,.drop-leave-active
+  @extends .ease-400
+.drop-enter,.drop-leave-to
+  // opacity 0
+  transform scaleY(0) translateY(-100%)
+
+
+// 导航
+.nav-enter-active,.nav-leave-active
+  @extends .ease-400
+.nav-enter,.nav-leave-to
+  opacity 0
+  transform translateX(-20px)
+
+i.anticon
+  transition none
+  cursor pointer
+  svg
+    transition none
+    use
+      transition:  all ease .4s
+      cursor pointer
