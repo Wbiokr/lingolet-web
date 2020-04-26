@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import { Button } from 'antd';
 
 class Home extends Component {
   private constructor(props: any) {
@@ -6,7 +7,14 @@ class Home extends Component {
   }
 
   public render() {
-    return <div>首页</div>
+    return <div>
+      <h2>首页</h2>
+      <Button>antd 按钮</Button>
+    </div>
+  }
+
+  public componentDidMount() {
+    console.log(this)
   }
 }
 

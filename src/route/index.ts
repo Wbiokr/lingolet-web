@@ -3,6 +3,7 @@ import manualCheck from './manualCheck';
 import myOrder from './myOrder';
 import packagePurchase from './packagePurchase';
 import workSpace from './workSpace';
+import staticRoutes from './static';
 
 import Home from '@/views/home';
 import Login from '@/views/login';
@@ -15,6 +16,7 @@ export default [
   ...myOrder,
   ...packagePurchase,
   ...workSpace,
+  ...staticRoutes,
   {
     path: '/home',
     component: Home

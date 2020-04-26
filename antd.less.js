@@ -1,6 +1,6 @@
 module.exports = {
   // 主题色
-  'primary-color': '#f00',
+  'primary-color': '#005198',
 
   // 成功色-绿色
   'success-color': '#52c41a',

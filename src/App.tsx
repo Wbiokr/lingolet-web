@@ -6,28 +6,40 @@ import Header from '@/components/layout/header';
 import routes from '@/route/index';
 import * as redux from 'react-redux';
 import { Common } from '@/interface/common';
-import { Button } from 'antd';
 
 const { connect } = redux as any;
 
-const { HashRouter, Route, Switch } = Router as any;
+const { Route, Switch, Redirect, withRouter } = Router as any;
 
 class App extends Component {
   
   private constructor(props: any) {
     super(props)
   }
+  
+  public state = {
+    staticRoutes: ['home','login','register','password','static'],
+  }
 
   public render() {
-    return (
-      <HashRouter className='hash'>
 
-        <div className="app">
-          <Nav></Nav>
-          <Button>hello</Button>
-          {/* <Header></Header> */}
+    const { location } = this.props as any;
+    const pathStartStr=location.pathname.split('/')[1];
+
+    return (
+
+        <div className="app" style={{minHeight: (this as any).props.common.height+"px"}}>
+          {
+            this.state.staticRoutes.includes(pathStartStr) ? 
+            <Nav></Nav> :
+            <Header></Header>
+          }
           <main>
-            {/* <Menu></Menu> */}
+            {
+              this.state.staticRoutes.includes(pathStartStr) ? 
+              null :
+              <Menu></Menu>
+            }
             <article className='container'>
               <Switch>
                 {
@@ -35,17 +47,16 @@ class App extends Component {
                     return <Route {...item} key={index}></Route>
                   })
                 }
+                <Redirect to="/home" from='/' /> 
               </Switch>
             </article>
           </main>
         </div>
-      </HashRouter>
     );
   }
 
   public componentDidMount() {
     window.addEventListener('resize',()=>{
-
         (this as any).props.$setHeight();
         (this as any).props.$setWidth();
       
@@ -54,7 +65,7 @@ class App extends Component {
   }
 
   public componentWillUpdate(state: Common) {
-    return state.common.height==(this as any).props.common.height&&state.common.width==(this as any).props.common.width;
+    return state.common.height===(this as any).props.common.height&&state.common.width===(this as any).props.common.width;
   }
 }
 
@@ -78,4 +89,4 @@ const mapDispatchToProps = (dispatch: Function) => ({
 })
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(App));
