@@ -28,13 +28,13 @@ class App extends Component {
 
     return (
 
-        <div className="app" style={{minHeight: (this as any).props.common.height+"px"}}>
+        <div className="app f-column" style={{minHeight: (this as any).props.common.height+"px"}}>
           {
             this.state.staticRoutes.includes(pathStartStr) ? 
             <Nav></Nav> :
             <Header></Header>
           }
-          <main>
+          <main className='f-1'>
             {
               this.state.staticRoutes.includes(pathStartStr) ? 
               null :
